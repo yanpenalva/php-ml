@@ -1,17 +1,16 @@
 <?php
 
-require_once 'vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 
 use Phpml\Association\Apriori;
 
 $apriori = new Apriori();
 
-$samples =
-[
-['milk', 'bread','cheese'],
-['fish', 'shrimp', 'salmon'],
-['eggs', 'bacon', 'toast'],
-['sun', 'clouds', 'rain']
+$samples = [
+    ['milk', 'bread', 'cheese'],
+    ['fish', 'shrimp', 'salmon'],
+    ['eggs', 'bacon', 'toast'],
+    ['sun', 'clouds', 'rain'],
 ];
 
 $apriori->train($samples, []);

@@ -17,10 +17,10 @@ composer install
 ## Run the current example
 
 ```bash
-php index.php
+php examples/apriori/index.php
 ```
 
-The current example uses the Apriori association-rule learner with a small set of transactions.
+The current Apriori example uses the association-rule learner with a small set of transactions.
 
 ## Studied topics
 
@@ -30,9 +30,9 @@ The current example uses the Apriori association-rule learner with a small set o
 
 ## Organization
 
-- `index.php` — current executable study example.
 - `notes/` — concise notes about concepts and algorithms.
-- `examples/` — additional focused reproductions, added as needed.
+- `examples/<context>/index.php` — one executable example per study context.
+- `examples/apriori/index.php` — current Apriori association-rule example.
 - `experiments/` — personal variations and investigations, added as needed.
 - `composer.json` and `composer.lock` — project dependencies.
 
