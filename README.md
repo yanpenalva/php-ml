@@ -14,25 +14,22 @@ This is my personal Machine Learning study repository using PHP. It is a small s
 composer install
 ```
 
-## Run the current example
+## Run the examples
 
 ```bash
-php examples/apriori/index.php
+php examples/association/index.php
+php examples/classification/svm/index.php
 ```
-
-The current Apriori example uses the association-rule learner with a small set of transactions.
 
 ## Studied topics
 
-- Association rules and the Apriori algorithm.
-- Transactions, items, itemsets, support, and confidence.
-- Candidate generation, pruning, and rule generation.
+- **Association Analysis:** Apriori algorithm, frequent itemsets, support, confidence, lift, candidate generation, and pruning (`notes/association.md`).
+- **Classification Analysis:** Supervised learning, decision boundaries, metrics, and algorithms: Support Vector Classification (SVC/SVM), k-Nearest Neighbors (k-NN), and Naive Bayes (`notes/classification.md`).
 
 ## Organization
 
-- `notes/` — concise notes about concepts and algorithms.
-- `examples/<context>/index.php` — one executable example per study context.
-- `examples/apriori/index.php` — current Apriori association-rule example.
+- `notes/` — in-depth technical notes and algorithm study guides (`notes/association.md`, `notes/classification.md`).
+- `examples/<context>/index.php` — executable examples per study context (`examples/association/`, `examples/classification/`).
 - `experiments/` — personal variations and investigations, added as needed.
 - `composer.json` and `composer.lock` — project dependencies.
 

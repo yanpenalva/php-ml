@@ -15,8 +15,8 @@ $samples = [
 
 $apriori->train($samples, []);
 
-$result = $apriori->predict([['milk', 'bread']]);
-
-foreach ($result[0] as $association) {
+$result = $apriori->predict([['milk'], ['fish']]);
+$associations = array_merge(...$result);
+foreach ($associations as $association) {
     echo implode(', ', $association) . PHP_EOL;
 }
