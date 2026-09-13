@@ -125,6 +125,11 @@ Supported Kernels in PHP-ML:
 
 **k-Nearest Neighbors** (Fix & Hodges, 1951) is a **non-parametric, instance-based (lazy) learner**.
 
+This section describes the k-NN algorithm independently from the SVM section
+above and the Naive Bayes section below. k-NN is a useful choice when the
+class of an observation is expected to depend on the classes of nearby
+observations rather than on a globally learned formula.
+
 ```text
        Feature 2
            ^
@@ -164,6 +169,22 @@ For two points $u, v \in \mathbb{R}^d$:
 3. Tally class occurrences among the $k$ neighbors.
 4. Assign the class with the highest vote count:
    $$\hat{y} = \arg\max_{c \in \mathcal{C}} \sum_{i \in N_k(x)} \mathbb{I}(y_i = c)$$
+
+#### Complete k-NN Classification Flow
+
+1. Store the labeled feature vectors during `train()`; no coefficients or
+   explicit decision boundary are learned.
+2. For a query vector, calculate its distance to every stored vector.
+3. Sort the distances and keep only the closest $k$ samples.
+4. Count the target labels among those neighbors.
+5. Return the most frequent label as the prediction.
+
+With $N$ training samples, $d$ features, and $Q$ query samples, the basic
+implementation costs approximately $\mathcal{O}(Q \cdot N \cdot d)$ at
+prediction time and stores $\mathcal{O}(N \cdot d)$ data. Consequently, k-NN
+is simple and interpretable, but prediction can become expensive for large
+datasets. The example in `examples/classification/knn/index.php` demonstrates
+this flow with two-dimensional points and three-neighbor voting.
 
 > [!TIP]
 > **Choosing $k$ & Feature Scaling:**
