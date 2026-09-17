@@ -36,4 +36,3 @@ php examples/regression/index.php
 - `experiments/` — personal variations and investigations, added as needed.
 - `composer.json` and `composer.lock` — project dependencies.
 
-Course examples may be reproduced here as study references, but this repository is not official course material and is not structurally coupled to any course. Personal experiments and notes are kept independent so the lab can evolve with my studies.
